@@ -6,7 +6,7 @@
 
 **University:** Atria University  
 
-**Testnet wallet address:** 
+**Testnet wallet address:** 0x33a1584C06c9B48Be572b48E6af79CcCE501005c
 
 ## Sessions
 
