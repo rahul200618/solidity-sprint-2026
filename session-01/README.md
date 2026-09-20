@@ -1,7 +1,7 @@
 # Session 01 — Simple Storage
 **Name:** Rahul A
 **Enrolment ID:** AU24UG-046
-**Date submitted:** 21/09/2026
+**Date submitted:** 20/09/2026
 ## 1. What this contract does
 This contract stores a public string message and the address of whoever last
 updated it. Anyone can call `updateMessage` to change the message, and the

@@ -1,7 +1,7 @@
 # Session 02 — Student Registry
 **Name:** Rahul A
 **Enrolment ID:** AU24UG-046
-**Date submitted:** 21/09/2026
+**Date submitted:** 20/09/2026
 ## 1. What this contract does
 This contract stores student information such as name, enrollment ID, and status (Active, Inactive, Graduated). A registered student can update their own status, and anyone can look up a student's record by address. Attempting to register twice or query an unregistered address reverts with a clear error message.
 ## 2. Design decisions
@@ -42,4 +42,4 @@ Deciding how to detect whether a student is already registered — I initially
 considered checking whether the name field was empty, but realised a blank
 name would break that logic.
 ## 6. Acknowledgements
-Consulted Claude to understand the working of the contract and to understand Solidity concepts.
+Consulted Claude to understand the working of the contract and to understand Solidity Concepts.
