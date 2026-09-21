@@ -49,7 +49,7 @@ makes the contract easier to monitor off-chain.
 **On Sepolia (live):**
 7. Deployed contract visible at:
    `https://sepolia.etherscan.io/tx/0x95d82e744d6cd3f4fd1142ff607a1e71cd10777bcd6f9e49f8324c5b9b159ec3`
-8. Transfer to classmate transaction hash: 0x33a1584C06c9B48Be572b48E6af79CcCE501005c
+8. Transfer to classmate transaction hash: 0x55b9f8736ce1c79fb0becc525481c594c7cdcf32458a7e6cac1ce23112051ff0
 ## 5. What I found difficult
 Understanding decimals was the trickiest part — ERC-20 tokens don't store
 fractional numbers, so `1000` tokens are actually stored as
