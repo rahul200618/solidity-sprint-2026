@@ -21,7 +21,7 @@ legitimately submit a blank name); the boolean flag is unambiguous.
 - Network: Remix VM
 - Contract address: 0x1c91347f2A44538ce62453BEBd9Aa907C662b4bD
 - Transaction hash: 0x8ab6ce3b9ef0ab2f0d50f9e7d5d4be0c344f1dc531b6a5fad88c750a23596e4f 
-- Block explorer link: 0x4a7bd87c033a57af23b5df449b338fc07b3749e4a016595dc89b1cf3d47124c1
+- Block explorer link: N/A (Remix VM)
 ## 4. How to test it
 1. Deploy the contract. Remix gives you multiple test accounts 
 2. Switch to **Account 1**. Call `registerStudent("Rahul", 101)` → succeeds.

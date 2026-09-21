@@ -25,7 +25,7 @@ one is updated and the other is not.
 - Network: Remix VM
 - Contract address: 0xe2899bddFD890e320e643044c6b95B9B0b84157A
 - Transaction hash: 0x592d93cfec55790cc68f9bfc14a4d04aa0e7532c0d0e5ceb3a8acc9c7f1f3cf7 
-- Block explorer link: 0xce84506bfd4126b4c3c1fb9ca076ad7003cdd080731e2fd42c76d12b506de60b
+- Block explorer link: N/A (Remix VM)
 ## 4. How to test it
 1. `getMessage()` → returns `""` (empty string, nothing stored yet)
 2. `getLastEditor()` → returns `0x0000000000000000000000000000000000000000`

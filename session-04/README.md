@@ -18,7 +18,7 @@ I kept balances as a separate mapping rather than relying only on address(this).
 - Network: Remix VM
 - Contract address: 0x540d7E428D5207B30EE03F2551Cbb5751D3c7569
 - Transaction hash: 0xa4eab4c4dcb08878fabe33f0a86f18e146a06e9dc181ec424349ae59a7561a06 
-- Block explorer link: 0x5b5a254d10d3abd33942df401af5b7152852331f81183e70b9259c53b122ce21
+- Block explorer link: N/A (Remix VM)
 ## 4. How to test it
 1. `deposit()` with 0 ETH from Account A → reverts with "Zero Amount"
 2. `deposit()` with 1 ETH from Account A → succeeds, `Deposited` event logged

@@ -23,7 +23,7 @@ I also explicitly named the interface `IStudentRegistry` (rather than, say, `ISt
 - Network: Remix VM
 - Contract address: 0x5A86858aA3b595FD6663c2296741eF4cd8BC4d01
 - Transaction hash: 0x582c909307369032c81e4c6a1bd55e29d85c73dcd34eb719196f4a02e0253396 
-- Block explorer link: 0x4aff8efef1a20d66d40254cb4f893a03c724ed0d2f1bb6ee3da7cb84c4dac6f0
+- Block explorer link: N/A (Remix VM)
 ## 4. How to test it
 1. `owner()` → returns the deploying account's address
 2. `registerStudent("Rahul", 1)` from the owner account → succeeds, `StudentRegistered` event logged
