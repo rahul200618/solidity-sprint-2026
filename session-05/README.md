@@ -30,26 +30,32 @@ event. The OZ base `burn()` doesn't emit a custom event, so adding one here
 makes the contract easier to monitor off-chain.
 
 ## 3. Deployment
-- Network: Remix VM
+- Network: Sepolia Testnet
 - Contract address: 0xE57Fa53aEA4350F47EBE8f6D6e5B0D8dC85Be71e
 - Transaction hash: 0x95d82e744d6cd3f4fd1142ff607a1e71cd10777bcd6f9e49f8324c5b9b159ec3 
 - Block explorer link: https://sepolia.etherscan.io/tx/0x95d82e744d6cd3f4fd1142ff607a1e71cd10777bcd6f9e49f8324c5b9b159ec3
 ## 4. How to test it
-1. `deposit()` with 0 ETH from Account A → reverts with "Zero Amount"
-2. `deposit()` with 1 ETH from Account A → succeeds, `Deposited` event logged
-3. `getBalance()` from Account A → returns 1 ETH (in wei)
-4. `deposit()` with 2 ETH from Account B → succeeds
-5. `getContractBalance()` → returns 3 ETH (combined pool)
-6. `withdraw()` from Account A → succeeds, `Withdrawn` event logged, A's wallet balance increases by 1 ETH
-7. `getBalance()` from Account A → returns 0
-8. `withdraw()` again from Account A → reverts with "Nothing to Withdraw"
-9. `withdraw()` from Account B → succeeds, B receives 2 ETH
-10. `getContractBalance()` → returns 0
+**In Remix (before Sepolia deployment, using Remix VM):**
 
+1. Deploy with `initialSupply = 1000`. Owner (Account 1) receives 1000 RHT.
+2. Call `totalSupply()` → returns `1000000000000000000000` (1000 × 10^18).
+3. Call `balanceOf(<Account 1>)` → same value.
+4. Switch to **Account 2**. Call `mint(<any address>, 100)` → reverts with error
+   `"Only owner can mint"`. ← expected failure (access control check)
+5. Switch back to **Account 1**. Call `mint(<Account 2 address>, 100)` →
+   succeeds. `balanceOf(<Account 2>)` → `100000000000000000000`.
+6. From Account 2, call `burn(50)` → succeeds. `balanceOf(<Account 2>)` →
+   `50000000000000000000`. `totalSupply()` decreases by 50 tokens.
+**On Sepolia (live):**
+7. Deployed contract visible at:
+   `https://sepolia.etherscan.io/tx/0x95d82e744d6cd3f4fd1142ff607a1e71cd10777bcd6f9e49f8324c5b9b159ec3`
+8. Transfer to classmate transaction hash: 0x33a1584C06c9B48Be572b48E6af79CcCE501005c
 ## 5. What I found difficult
-I also initially had `withdraw()` marked as `payable` by mistake, which
-would have allowed Ether to be sent in during a withdrawal — logically wrong
-for a function that should only send Ether out.
+Understanding decimals was the trickiest part — ERC-20 tokens don't store
+fractional numbers, so `1000` tokens are actually stored as
+`1000000000000000000000`. Forgetting to multiply by `10 ** decimals()` in
+the constructor would have meant the "initial supply" showed as a fraction
+of one token in MetaMask.
 ## 6. Acknowledgements
-Extended from my Session 02 `StudentRegistry` contract.
-Consulted Claude to understand the working of the contract and to understand Solidity concepts(payable functions, msg.value, the call method, reentrancy, and the Checks-Effects-Interactions pattern)
+OpenZeppelin Contracts v5 — ERC20 and ERC20Burnable used as base contracts. https://docs.openzeppelin.com/contracts/5.x/erc20
+Consulted Claude to understand the working of the contract and to understand Solidity concepts.
