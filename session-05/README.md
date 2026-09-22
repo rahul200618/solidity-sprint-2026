@@ -59,8 +59,8 @@ of one token in MetaMask.
 ## 6. Acknowledgements
 OpenZeppelin Contracts v5 — ERC20 and ERC20Burnable used as base contracts. https://docs.openzeppelin.com/contracts/5.x/erc20
 Consulted Claude to understand the working of the contract and to understand Solidity concepts.
-![image-1](./image-1.png)
-![image](./image.png)
-![image-2](./image-2.png)
-![image-3](./image-3.png)
+<img src="images/image-1.png" alt="image-1" width="450" />
+<img src="images/image.png" alt="image" width="450" />
+<img src="images/image-2.png" alt="image-2" width="450" />
+<img src="images/image-3.png" alt="image-3" width="450" />
 
