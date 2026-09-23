@@ -1,7 +1,7 @@
 # Session 06 — Build & Deploy Your Own NFT Contract
 **Name:** Rahul A
 **Enrolment ID:** AU24UG-046
-**Date submitted:** 21/09/2026
+**Date submitted:** 22/09/2026
 ## 1. What this contract does
 This contract implements an ERC-721 NFT collection called Rahul Collection
 (RNFT). The owner can mint NFTs to any address by providing a tokenURI —
