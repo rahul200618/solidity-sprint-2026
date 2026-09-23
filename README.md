@@ -17,3 +17,7 @@
 | 03      | Make Your Contracts observable  &     | Student Registry2| Submitted |
 |         | Controlled                            |                  |           |
 | 04      | Ether Handling and Contract Security  | Ether Wallet     | Submitted |
+| 05      | Build & Deploy Your Own Token         |RahulToken        | Submitted |   
+| 06      | Build & Deploy Your Own NFT Contract  |RahulNFT          | Submitted |   
+| 07      | Build & Deploy Your Own Dapp          |RahulDapp         | Submitted |
+

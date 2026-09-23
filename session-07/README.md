@@ -1,4 +1,4 @@
-# Session 07 — Build, Deploy & Test Your Own Token
+# Session 07 — Build, Deploy & Test Your Own dAPP
 **Name:** Rahul A
 **Enrolment ID:** AU24UG-046
 **Date submitted:** 22/09/2026
