@@ -35,21 +35,39 @@ so nothing sensitive is committed to the repository.
 - Transaction hash: Na 
 - Block explorer link: https://sepolia.etherscan.io/address/0xe8035B27933CC23b50621aa64064A0C3757Ba99B
 ## 4. How to test it
-1. `deposit()` with 0 ETH from Account A → reverts with "Zero Amount"
-2. `deposit()` with 1 ETH from Account A → succeeds, `Deposited` event logged
-3. `getBalance()` from Account A → returns 1 ETH (in wei)
-4. `deposit()` with 2 ETH from Account B → succeeds
-5. `getContractBalance()` → returns 3 ETH (combined pool)
-6. `withdraw()` from Account A → succeeds, `Withdrawn` event logged, A's wallet balance increases by 1 ETH
-7. `getBalance()` from Account A → returns 0
-8. `withdraw()` again from Account A → reverts with "Nothing to Withdraw"
-9. `withdraw()` from Account B → succeeds, B receives 2 ETH
-10. `getContractBalance()` → returns 0
+**Run the automated test suite:**
+```bash
+npx hardhat test
+```
+
+Expected output:
+
+RahulToken
+✔ should transfer tokens between accounts
+✔ should revert transfer if balance is insufficient
+✔ should revert mint if caller is not owner
+✔ should allow owner to mint tokens
+
+4 passing
+**Test descriptions:**
+
+1. `should transfer tokens between accounts` — owner transfers 100 RHT to
+   addr1; `balanceOf(addr1)` returns `100 × 10^18`. ✔
+2. `should revert transfer if balance is insufficient` — addr1 (zero
+   balance) tries to transfer 100 RHT → reverts with
+   `ERC20InsufficientBalance`. ← expected failure ✔
+3. `should revert mint if caller is not owner` — addr1 calls `mint` →
+   reverts with `OwnableUnauthorizedAccount`. ← expected failure ✔
+4. `should allow owner to mint tokens` — owner mints 100 RHT to addr1;
+   balance confirmed correct. ✔
 
 ## 5. What I found difficult
-I also initially had `withdraw()` marked as `payable` by mistake, which
-would have allowed Ether to be sent in during a withdrawal — logically wrong
-for a function that should only send Ether out.
+The Hardhat keystore was the most confusing part — the keystore requires a
+password that must be typed exactly the same every time, and any mismatch
+gives `HHE50000: Invalid password or corrupted keystore file` with no way
+to recover and other errors too.
 ## 6. Acknowledgements
-Extended from my Session 02 `StudentRegistry` contract.
-Consulted Claude to understand the working of the contract and to understand Solidity concepts(payable functions, msg.value, the call method, reentrancy, and the Checks-Effects-Interactions pattern)
+- OpenZeppelin Contracts v5 — ERC20, ERC20Burnable, Ownable
+- RahulToken contract carried over from Session 05
+- Hardhat project template used as the base structure
+Consulted Claude to understand the working of the contract and to understand Solidity concepts.(to set up the test file, Ignition module,and config)
