@@ -25,7 +25,7 @@ async function main() {
   console.log("Minted 100 RHT");
 
   // Transfer 50 tokens to another address
-  const tx2 = await token.transfer("0xRecipientAddressHere", ethers.parseUnits("50", 18));
+  const tx2 = await token.transfer("0x33a1584C06c9B48Be572b48E6af79CcCE501005c", ethers.parseUnits("50", 18));
   await tx2.wait();
   console.log("Transferred 50 RHT");
 }
