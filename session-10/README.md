@@ -39,8 +39,6 @@ deploying the implementation, encoding the `initialize` call, and passing
 both to a custom `MyProxy` wrapper around OZ's `ERC1967Proxy`.
 
 ## 3. Deployment
-## 3. Deployment
-
 ### V1
 - Network: Sepolia testnet
 - Implementation (V1): `0x48188C7a04f366731a91C3b36AFb9f7a1Fcfff90`
