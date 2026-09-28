@@ -1,0 +1,49 @@
+# Node modules
+/node_modules
+node_modules/
+
+# Compilation output
+/dist
+/bundle
+/out
+
+# Hardhat Build Artifacts & Cache
+/artifacts
+/cache
+/cache_forge
+/cache_hardhat
+
+# Typechain output
+/types
+/typechain-types
+
+# OpenZeppelin manifests
+/.openzeppelin
+.openzeppelin/
+
+# Hardhat Ignition deployments
+/ignition/deployments
+
+# Environment files
+.env
+.env.*
+!.env.example
+.env.local
+
+# Coverage reports
+/coverage
+coverage.json
+
+# Gas snapshot & cheatcodes output
+/.gas-snapshot
+/snapshots
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System & OS Files
+.DS_Store
+Thumbs.db
